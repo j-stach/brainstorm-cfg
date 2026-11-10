@@ -27,6 +27,7 @@ ezcfg::pub_cfg! {
         max_dur_hebb: f32,
         min_dur_hebb: f32,
 
+        excite_rate: f32,
         sensitize_rate: f32,
         plasticize_rate: f32,
         strengthen_rate: f32,
