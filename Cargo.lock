@@ -3,7 +3,7 @@
 version = 4
 
 [[package]]
-name = "cajal-cfg"
+name = "brainstorm-cfg"
 version = "0.1.0"
 dependencies = [
  "ezcfg",

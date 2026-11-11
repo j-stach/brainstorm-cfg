@@ -10,19 +10,22 @@ fn select_config() {
     let home = env::var("HOME").expect("Find user's home directory");
     let home = Path::new(&home);
 
-    // TODO ANIMUS CONFIG PATH LOCATION RELATIVE TO BUILD
-    // If `cajal` is building to support `animusd`, then the user may want a dedicated `neuron.cfg` file.
-    // In that case, `cajal-cfg` will expect to find it ... Where? 
+    // TODO 
+    // RUNTIME CONFIG PATH LOCATION RELATIVE TO BUILD
+    // If `brainstorm-lib` is building to support `brainstorm-rt`, 
+    // then the user may want a dedicated `neuron.cfg` file.
+    // In that case, `brainstorm-cfg` will expect to find it ... Where? 
+    // TODO
     let local = Path::new("./local.cfg");
 
     // Global preferences for neuron parameters can be kept in the framework directory.
-    let global = home.join(".cajal/neuron.cfg");
+    let global = home.join(".brainstorm/neuron.cfg");
 
-    // Default configuration that is packaged with `cajal`.
+    // Default configuration that is packaged with `brainstorm-lib`.
     let default = Path::new("neuron.cfg");
 
     let config_path: &Path = 
-        // Use the animus-specific config file first:
+        // Use the network-specific config file first:
         if local.exists() { local }
         // Use the user's custom global config second:
         else if global.exists() { global.as_path() } 
